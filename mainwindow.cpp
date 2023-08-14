@@ -229,12 +229,6 @@ void MainWindow::createWidgets()
 
     // Adding widgets
     ui->box_leftmenu->addWidget(whycombutton);
-    /*ui->box_leftmenu->addWidget(new QLabel(tr("Code sample"), this));
-    ui->box_leftmenu->addWidget(m_codeSampleCombobox);
-    ui->box_leftmenu->addWidget(new QLabel(tr("Completer"), this));
-    ui->box_leftmenu->addWidget(m_completerCombobox);
-    ui->box_leftmenu->addWidget(new QLabel(tr("Highlighter"), this));
-    ui->box_leftmenu->addWidget(m_highlighterCombobox);*/
     ui->box_leftmenu->addWidget(codepagebutton2);
     //codepagebutton2->hide();
     ui->box_leftmenu->addWidget(codeexplorer_bg);
@@ -420,7 +414,7 @@ void MainWindow::applysettings(){
     codepage->m_codeEditor->setSyntaxStyle(codepage->m_styles[settingspage->codetheme].second);
     settingspage->m_codeEditor->setFont(QFont(settingspage->currentfont));
 
-    QFile file(":/resources/whylightmode.qss");
+    /*QFile file(":/resources/whylightmode.qss");
     if(file.open(QFile::ReadOnly)) {
        QString StyleSheet = QLatin1String(file.readAll());
        file.close();
@@ -470,7 +464,7 @@ void MainWindow::applysettings(){
            { codepage->m_codeEditor->setSyntaxStyle(m_lightstyles[index].second); }
        );*/
        //settingspage->themefile_combobox->addItems(list);
-       codepage->m_codeEditor->setSyntaxStyle(m_lightstyles[index].second);
+       /*codepage->m_codeEditor->setSyntaxStyle(m_lightstyles[index].second);
        settingspage->m_codeEditor->setSyntaxStyle((m_lightstyles[index].second));
        codepage->m_codeEditor->setStyleSheet("color: #393939;"
                                              "background-color: #AFAFAF");
@@ -502,7 +496,7 @@ void MainWindow::applysettings(){
        QWidget::palette().color(settingsbutton->m_button_bg->backgroundRole()).isValid();
 
        file.close();
-    }
+    }*/
 }
 void MainWindow::leftMenuClose(bool menu_pressed){
         QPropertyAnimation *animation = new QPropertyAnimation(ui->leftmenu_frame, "size", this);
